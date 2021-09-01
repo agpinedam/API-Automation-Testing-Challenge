@@ -1,14 +1,21 @@
 import org.testng.annotations.Test;
+import utils.Credentials;
+
+import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
 public class Movies {
-    String apikey="7c20e68718e31a85764645078fddd237";
+    Credentials credentials = Credentials.getCredentials();
+    String apikey= credentials.getApiKey();
     String movieID= "372058";
     String token ="588c6255da7b10a295b7ec499e4b305d63b034aa";
     String sessionId="11c7e77e7e8c727ae611a1cc312233119740f040";
     String name ="desde java";
     Boolean confirm = true;
+
+    public Movies() throws IOException {
+    }
 
     @Test
     public void getDetails(){

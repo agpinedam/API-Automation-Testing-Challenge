@@ -1,6 +1,9 @@
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.Credentials;
+
+import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
@@ -8,10 +11,12 @@ import static org.testng.Assert.assertNotNull;
 
 
 public class Authentication {
-    String apikey="7c20e68718e31a85764645078fddd237";
-    String user ="angie.giceth";
-    String pasword ="123456";
-    //String tok = "465129daf55d89baef26b19aa2091c7a3e6d99a7";
+    Credentials credentials = Credentials.getCredentials();
+    String apikey=credentials.getApiKey();
+    String user =credentials.getUserName();
+    String password =credentials.getPassword();
+    public Authentication() throws IOException {
+    }
 
     @Test
     public void createGuestSession(){
@@ -45,7 +50,7 @@ public class Authentication {
         //createSessionWithLoggin
         String json ="{\n"+
                 "  \"username\": \""+user+"\",\n"+
-                "  \"password\": \""+pasword+"\",\n"+
+                "  \"password\": \""+password+"\",\n"+
                 "  \"request_token\": \""+token+"\"\n}";
         System.out.println(json);
         String url ="https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key="+apikey;
@@ -65,7 +70,7 @@ public class Authentication {
         //createSessionWithLoggin
         String json ="{\n"+
                 "  \"username\": \""+user+"\",\n"+
-                "  \"password\": \""+pasword+"\",\n"+
+                "  \"password\": \""+password+"\",\n"+
                 "  \"request_token\": \""+token+"\"\n}";
         System.out.println(json);
         String url ="https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key="+apikey;
@@ -79,7 +84,7 @@ public class Authentication {
         String json2 ="{\n"+
                 "  \"request_token\": \""+respondToken+"\"\n}";
         System.out.println(json2);
-        Response response3 = given().contentType("application/json").body(json2).when().post(u).then().extract().response();
+        //Response response3 = given().contentType("application/json").body(json2).when().post(u).then().extract().response();
         System.out.println(given().contentType("application/json").body(json2).when().post(u).then().log().body());
         //String guestSessionId = response3.jsonPath().getString("guest_session_id");
     }
