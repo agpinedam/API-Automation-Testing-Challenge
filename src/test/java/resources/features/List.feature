@@ -1,12 +1,4 @@
 Feature: list
-  Scenario: Get Details
-    Given : I have created a list before
-    And : have the corresponding list id
-    And : I have a valid api key
-    When : I send the query and the request
-    Then : I get a confirmation
-    And I get details of the list
-
   Scenario: Create List
     Given : I have a valid api key
     And : I have a session ID
@@ -26,6 +18,14 @@ Feature: list
     When : I send the query and the request
     Then : I get a confirmation
     And : I get a message
+
+  Scenario: Get List Details
+    Given : I have created a list before
+    And : have the corresponding list id
+    And : I have a valid api key
+    When : I send the query and the request
+    Then : I get a confirmation
+    And I get details of the list
 
   Scenario: Clear List
     Given : I have created a list before
