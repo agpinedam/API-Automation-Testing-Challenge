@@ -12,8 +12,7 @@ public class List extends Hooks {
     @Test
     public void createList(){
         String sessionId= create.SessionId(user,password,apikey);
-        System.out.println(sessionId);
-        String json=create.jsonList("Create list aaa","Create list form java asda");
+        String json=create.jsonList("Create list ","Create list form java asda");
 
         Response response = given().contentType("application/json").body(json).when()
                 .post("/list?api_key="+apikey+"&session_id="+sessionId).then().extract().response();
@@ -40,7 +39,11 @@ public class List extends Hooks {
     public void getListDetails(){
         String sessionId= create.SessionId(user,password,apikey);
         int listId = create.idListWithMovie(user,password,apikey,sessionId);
-        System.out.println(given().when().get("/list/"+listId+"?api_key="+apikey).then().log().body());
+        Response response = given().when().get("/list/"+listId+"?api_key="+apikey).then().extract().response();
+        confirmation.AssertCreatedBy(response,user);
+        confirmation.AsserItemCount(response);
+        confirmation.AssertListName(response);
+        System.out.println("get details");
     }
     @Test
     public void clearList(){

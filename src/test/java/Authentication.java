@@ -23,10 +23,6 @@ public class Authentication extends Hooks {
         confirmation.AssertRequestToken(response);
         System.out.println("Request token");
     }
-    public void createToken(){
-        System.out.println("Se ha creado el token");
-    }
-    //Create request token
     @Test
     public void createSessionWithLogin(){
         String token= create.Token(apikey);

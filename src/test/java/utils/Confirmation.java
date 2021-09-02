@@ -43,4 +43,28 @@ public class Confirmation {
         Assert.assertNotNull(listId);
 
     }
+    public void AssertCreatedBy(Response response,String user){
+        String createdBy= response.jsonPath().getString("created_by");
+        Assert.assertEquals(createdBy,user);
+    }
+    public void AsserItemCount(Response response){
+        int itemCount = response.jsonPath().getInt("item_count");
+        Assert.assertEquals(itemCount,1);
+    }
+    public void AssertListName(Response response){
+        String listName = response.jsonPath().getString("name");
+        Assert.assertNotNull(listName);
+    }
+    public void AssertMovieId(Response response,String movieId){
+        String id = response.jsonPath().getString("id");
+        Assert.assertEquals(id,movieId);
+    }
+    public void AssertMovieName(Response response){
+        String movieName = response.jsonPath().getString("title");
+        Assert.assertNotNull(movieName);
+    }
+    public void AssertMovieOverview(Response response){
+        String movieOverview = response.jsonPath().getString("overview");
+        Assert.assertNotNull(movieOverview);
+    }
 }

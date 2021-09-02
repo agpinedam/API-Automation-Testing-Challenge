@@ -40,6 +40,11 @@ public class Create {
                 "  \"media_id\": \""+mediaId+"\"\n}";
         return json;
     }
+    public String jsonRateMovie(String value){
+        String json ="{\n"+
+                "  \"value\": \"10.0\"\n}";
+        return json;
+    }
     public String SessionWithLogin(String user,String password ,String apiKey){
         String token = Token(apiKey);
         String json = jsonLogin(user,password,token);
@@ -59,7 +64,7 @@ public class Create {
     }
     public Response emptyList(String user,String password, String apiKey){
         String sessionId = SessionId(user,password,apiKey);
-        String json = jsonList("Create List Java aaaa ","This list was created from Java c: ahhh");
+        String json = jsonList("Create List Java o.o ","This list was created in an automation test");
         Response response = given().contentType("application/json").body(json).when()
                 .post("https://api.themoviedb.org/3/list?api_key="+apiKey+"&session_id="+sessionId).then().extract().response();
         return response;

@@ -1,37 +1,34 @@
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import utils.Credentials;
-
-import java.io.IOException;
+import utils.Hooks;
 
 import static io.restassured.RestAssured.given;
 
-public class Movies {
-    Credentials credentials = Credentials.getCredentials();
-    String apikey= credentials.getApiKey();
-    String movieID= "372058";
-    String token ="588c6255da7b10a295b7ec499e4b305d63b034aa";
-    String sessionId="11c7e77e7e8c727ae611a1cc312233119740f040";
-    String name ="desde java";
-    Boolean confirm = true;
+public class Movies extends Hooks {
 
-    public Movies() throws IOException {
-    }
+    String movieId= "372058";
 
     @Test
-    public void getDetails(){
-        String url ="https://api.themoviedb.org/3/movie/"+movieID+"?api_key="+apikey;
-        System.out.println(given().when().get(url).then().log().body());
+    public void getMovieDetails(){
+        Response response =given().when().get("/movie/"+movieId+"?api_key="+apikey).then().extract().response();
+        confirmation.AssertMovieId(response,movieId);
+        confirmation.AssertMovieName(response);
+        confirmation.AssertMovieOverview(response);
     }
     @Test
     public void rateMovie(){
-        String url ="https://api.themoviedb.org/3/movie/"+movieID+"/rating?api_key="+apikey+"&session_id="+sessionId;
-        String json ="{\n"+
-                "  \"value\": \"10.0\"\n}";
-        System.out.println(given().contentType("application/json").body(json).when().post(url).then().log().body());
+        String sessionId = create.SessionId(user,password,apikey);
+        String json = create.jsonRateMovie("10.0");
+        Response response = given().contentType("application/json").body(json)
+                .when().post("/movie/"+movieId+"/rating?api_key="+apikey+"&session_id="+sessionId).then().extract().response();
+        confirmation.AssertSuccessTrue(response);
+        confirmation.AssertStatusCode(response,1);
+        confirmation.AssertStatusMessage(response,"Success.");
     }
     @Test
-    public void delaterateMovie(){
-        String url ="https://api.themoviedb.org/3/movie/"+movieID+"/rating?api_key="+apikey+"&session_id="+sessionId;
+    public void deleteRateMovie(){
+        String sessionId = create.SessionId(user,password,apikey);
+        String url ="https://api.themoviedb.org/3/movie/"+movieId+"/rating?api_key="+apikey+"&session_id="+sessionId;
         //           https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=<<api_key>>&session_id=hhkhkj
         String json ="{\n"+
                 "  \"value\": \"10.0\"\n}";
