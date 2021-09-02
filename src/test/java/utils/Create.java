@@ -35,6 +35,11 @@ public class Create {
                 "  \"language\": \"en\"\n}";
         return json;
     }
+    public String jsonMediaId(String mediaId){
+        String json ="{\n"+
+                "  \"media_id\": \""+mediaId+"\"\n}";
+        return json;
+    }
     public String SessionWithLogin(String user,String password ,String apiKey){
         String token = Token(apiKey);
         String json = jsonLogin(user,password,token);
@@ -51,5 +56,23 @@ public class Create {
                 .then().extract().response();
         String sessionId=response.jsonPath().getString("session_id");
         return sessionId;
+    }
+    public Response emptyList(String user,String password, String apiKey){
+        String sessionId = SessionId(user,password,apiKey);
+        String json = jsonList("Create List Java aaaa ","This list was created from Java c: ahhh");
+        Response response = given().contentType("application/json").body(json).when()
+                .post("https://api.themoviedb.org/3/list?api_key="+apiKey+"&session_id="+sessionId).then().extract().response();
+        return response;
+    }
+    public int idListWithMovie(String user,String password, String apiKey,String sessionId){
+        Response response =emptyList(user,password,apiKey);
+        int listId= response.jsonPath().getInt("list_id");
+        String json = jsonMediaId("129");
+        given().contentType("application/json").body(json).when()
+                .post("https://api.themoviedb.org/3/list/"+listId+"/add_item?api_key="+apiKey+"&session_id="+sessionId).then();
+        return listId;
+    }
+    public int listId(Response response){
+        return response.jsonPath().getInt("list_id");
     }
 }
