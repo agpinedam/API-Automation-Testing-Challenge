@@ -1,25 +1,23 @@
-import org.testng.annotations.Test;
 import io.restassured.response.Response;
+import org.testng.annotations.Test;
+import utils.Hooks;
+
 import static io.restassured.RestAssured.given;
 
-public class List {
-    String apikey="7c20e68718e31a85764645078fddd237";
-    String user ="angie.giceth";
-    String pasword ="123456";
-    String token ="588c6255da7b10a295b7ec499e4b305d63b034aa";
-    String sessionId="11c7e77e7e8c727ae611a1cc312233119740f040";
-    String name ="desde java";
+public class List extends Hooks {
+
+    String name ="desde java arreglado";
     Boolean confirm = true;
+    String sessionId ="";
 
     @Test
     public void createList(){
-        String url ="https://api.themoviedb.org/3/list?api_key="+apikey+"&session_id="+sessionId;
-        String json ="{\n"+
-                "  \"name\": \""+name+"\",\n"+
-                "  \"description\": \"Cualquier cosa\",\n"+
-                "  \"language\": \"en\"\n}";
+        String sessionId = create.SessionId(user,password,apikey);
+        System.out.println(sessionId);
+        String json=create.jsonList("Create list","Create list form java");
         System.out.println(json);
-        System.out.println(given().contentType("application/json").body(json).when().post(url).then().log().body());
+        System.out.println(given().contentType("application/json").body(json).when()
+                .post("/list?api_key="+apikey+"&session_id="+sessionId).then().log().body());
     }
     @Test
     public void addMovieToAList(){
