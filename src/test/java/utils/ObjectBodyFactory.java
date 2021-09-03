@@ -1,22 +1,19 @@
-package utils;
-
+import com.github.javafaker.Faker;
+import com.google.gson.Gson;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class Create {
+public class ObjectBodyFactory {
 
-    public String Token(String apiKey){
+    public String token(String apiKey){
         String token =given().when().get("https://api.themoviedb.org/3/authentication/token/new?api_key="+apiKey)
                 .then().extract().jsonPath().getString("request_token");
         return token;
     }
     public String jsonLogin(String user,String password,String token){
-        String json="{\n"+
-                "  \"username\": \""+user+"\",\n"+
-                "  \"password\": \""+password+"\",\n"+
-                "  \"request_token\": \""+token+"\"\n}";
-        return json;
+        AuthenticationBody authenticationBody = new AuthenticationBody(password,token,user);
+        return new Gson().toJson(authenticationBody);
     }
     public String jsonToken(String token){
         String json ="{\n"+
@@ -29,11 +26,8 @@ public class Create {
         return json;
     }
     public String jsonList(String nameList,String description){
-        String json ="{\n"+
-                "  \"name\": \""+nameList+"\",\n"+
-                "  \"description\": \""+description+"\",\n"+
-                "  \"language\": \"en\"\n}";
-        return json;
+        RequestList list = new RequestList(nameList,description,"en");
+        return new Gson().toJson(list);
     }
     public String jsonMediaId(String mediaId){
         String json ="{\n"+
@@ -45,16 +39,16 @@ public class Create {
                 "  \"value\": \"10.0\"\n}";
         return json;
     }
-    public String SessionWithLogin(String user,String password ,String apiKey){
-        String token = Token(apiKey);
+    public String sessionWithLogin(String user, String password , String apiKey){
+        String token = token(apiKey);
         String json = jsonLogin(user,password,token);
         given().contentType("application/json").body(json).when()
                 .post("https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key="+apiKey)
                 .then();
         return token;
     }
-    public String SessionId(String user, String password, String apiKey){
-        String token =SessionWithLogin(user,password,apiKey);
+    public String sessionId(String user, String password, String apiKey){
+        String token = sessionWithLogin(user,password,apiKey);
         String json = jsonToken(token);
         Response response = given().contentType("application/json")
                 .body(json).when().post("https://api.themoviedb.org/3/authentication/session/new?api_key="+apiKey)
@@ -63,9 +57,11 @@ public class Create {
         return sessionId;
     }
     public Response emptyList(String user,String password, String apiKey){
-        String sessionId = SessionId(user,password,apiKey);
-        String json = jsonList("Create List Java o.o ","This list was created in an automation test");
-        Response response = given().contentType("application/json").body(json).when()
+        String sessionId = sessionId(user,password,apiKey);
+        String json = jsonList("ObjectBodyFactory List Java o.o ",
+                new Faker().letterify("random ??????? description ??????? ??????????"));
+        Response response = given()
+                .contentType("application/json").body(json).when()
                 .post("https://api.themoviedb.org/3/list?api_key="+apiKey+"&session_id="+sessionId).then().extract().response();
         return response;
     }

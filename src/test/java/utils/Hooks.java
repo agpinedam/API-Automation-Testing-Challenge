@@ -1,6 +1,5 @@
-package utils;
 import io.restassured.RestAssured;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
 
 import java.io.IOException;
 
@@ -9,9 +8,9 @@ public class Hooks {
     protected String user;
     protected String password;
     protected Confirmation confirmation = new Confirmation();
-    protected Create create = new Create();
+    protected ObjectBodyFactory objectBodyFactory = new ObjectBodyFactory();
 
-    @BeforeSuite
+    @BeforeClass
     public void setup() throws IOException {
         Credentials credentials = Credentials.getCredentials();
         apikey=credentials.getApiKey();
