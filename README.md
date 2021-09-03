@@ -33,3 +33,5 @@ Implementation Constrains
 • Note: feel free to use any other technology you want
 • Follow good programming practices
 • Use git and share your project in a GitHub repo
+
+Note: The program consists of: the features folder where the test cases written in cucumber are located, the test folder that contains the test cases, the utils folder with classes that help create the test cases and the models folder that contains pojos for the creation of the json body
