@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Testing Google Apps]">
+  <test thread-count="5" verbose="0" name="Regression(failed)">
+    <classes>
+      <class name="test.List">
+        <methods>
+          <include name="setupSessionId"/>
+          <include name="setup"/>
+          <include name="deletedList"/>
+        </methods>
+      </class> <!-- test.List -->
+      <class name="test.Movies">
+        <methods>
+          <include name="setupSessionId"/>
+          <include name="setup"/>
+          <include name="rateMovie"/>
+        </methods>
+      </class> <!-- test.Movies -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Testing Google Apps] -->

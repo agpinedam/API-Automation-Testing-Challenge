@@ -69,7 +69,6 @@ public class Authentication extends Hooks {
         System.out.println(response.then().log().body());
         confirmation.assertSuccessTrue(response);
         confirmation.assertSessionId(response);
-        System.out.println("ObjectBodyFactory session");
     }
     @Test
     public void deletedSession(){

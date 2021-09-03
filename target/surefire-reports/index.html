@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Testing_Google_Apps">
+              <span class="suite-name border-failed">Testing Google Apps</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Testing_Google_Apps">
+                    <span>C:\Users\apineda\Documents\API_Testing_Challenge\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Testing_Google_Apps">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Testing_Google_Apps">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Testing_Google_Apps">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Testing_Google_Apps">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Testing_Google_Apps">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Testing_Google_Apps">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">12 methods, 2 failed,   10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Testing_Google_Apps" class="hide-methods failed suite-Testing_Google_Apps"> (hide)</a> <!-- hide-methods failed suite-Testing_Google_Apps -->
+                      <a href="#" panel-name="suite-Testing_Google_Apps" class="show-methods failed suite-Testing_Google_Apps"> (show)</a> <!-- show-methods failed suite-Testing_Google_Apps -->
+                    </span>
+                    <div class="method-list-content failed suite-Testing_Google_Apps">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.List" hash-for-method="deletedList">deletedList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Movies" hash-for-method="rateMovie">rateMovie</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Testing_Google_Apps -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Testing_Google_Apps" class="hide-methods passed suite-Testing_Google_Apps"> (hide)</a> <!-- hide-methods passed suite-Testing_Google_Apps -->
+                      <a href="#" panel-name="suite-Testing_Google_Apps" class="show-methods passed suite-Testing_Google_Apps"> (show)</a> <!-- show-methods passed suite-Testing_Google_Apps -->
+                    </span>
+                    <div class="method-list-content passed suite-Testing_Google_Apps">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.List" hash-for-method="addMovieToAList">addMovieToAList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.List" hash-for-method="clearList">clearList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Authentication" hash-for-method="createGuestSession">createGuestSession</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.List" hash-for-method="createList">createList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Authentication" hash-for-method="createRequestToken">createRequestToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Authentication" hash-for-method="createSession">createSession</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Authentication" hash-for-method="createSessionWithLogin">createSessionWithLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Authentication" hash-for-method="deletedSession">deletedSession</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.List" hash-for-method="getListDetails">getListDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Google_Apps" title="test.Movies" hash-for-method="getMovieDetails">getMovieDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Testing_Google_Apps -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Testing_Google_Apps" class="panel Testing_Google_Apps">
+          <div class="suite-Testing_Google_Apps-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.List</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="deletedList">
+                  </a> <!-- deletedList -->
+                  <span class="method-name">deletedList</span>
+                  <div class="stack-trace">java.lang.AssertionError: Request List should be successful expected [true] but found [false]
+	at utils.Confirmation.assertSuccessTrue(Confirmation.java:10)
+	at test.List.deletedList(List.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Testing_Google_Apps-class-failed -->
+          <div class="suite-Testing_Google_Apps-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.Movies</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="rateMovie">
+                  </a> <!-- rateMovie -->
+                  <span class="method-name">rateMovie</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [1] but found [12]
+	at utils.Confirmation.assertStatusCode(Confirmation.java:34)
+	at test.Movies.rateMovie(Movies.java:36)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Testing_Google_Apps-class-failed -->
+          <div class="suite-Testing_Google_Apps-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.Authentication</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createGuestSession">
+                  </a> <!-- createGuestSession -->
+                  <span class="method-name">createGuestSession</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createRequestToken">
+                  </a> <!-- createRequestToken -->
+                  <span class="method-name">createRequestToken</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createSession">
+                  </a> <!-- createSession -->
+                  <span class="method-name">createSession</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createSessionWithLogin">
+                  </a> <!-- createSessionWithLogin -->
+                  <span class="method-name">createSessionWithLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deletedSession">
+                  </a> <!-- deletedSession -->
+                  <span class="method-name">deletedSession</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Testing_Google_Apps-class-passed -->
+          <div class="suite-Testing_Google_Apps-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.List</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addMovieToAList">
+                  </a> <!-- addMovieToAList -->
+                  <span class="method-name">addMovieToAList</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clearList">
+                  </a> <!-- clearList -->
+                  <span class="method-name">clearList</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createList">
+                  </a> <!-- createList -->
+                  <span class="method-name">createList</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getListDetails">
+                  </a> <!-- getListDetails -->
+                  <span class="method-name">getListDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Testing_Google_Apps-class-passed -->
+          <div class="suite-Testing_Google_Apps-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.Movies</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getMovieDetails">
+                  </a> <!-- getMovieDetails -->
+                  <span class="method-name">getMovieDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Testing_Google_Apps-class-passed -->
+        </div> <!-- panel Testing_Google_Apps -->
+        <div panel-name="test-xml-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\apineda\Documents\API_Testing_Challenge\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Testing Google Apps&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Regression&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;test.List&quot;/&gt;
+      &lt;class name=&quot;test.Authentication&quot;/&gt;
+      &lt;class name=&quot;test.Movies&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Regression --&gt;
+&lt;/suite&gt; &lt;!-- Testing Google Apps --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Testing Google Apps</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Regression (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Testing Google Apps</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Testing Google Apps</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Testing_Google_Apps');
+function tableData_Testing_Google_Apps() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(12);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'clearList')
+data.setCell(0, 2, 'test.List')
+data.setCell(0, 3, 1228);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'addMovieToAList')
+data.setCell(1, 2, 'test.List')
+data.setCell(1, 3, 1138);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'deletedList')
+data.setCell(2, 2, 'test.List')
+data.setCell(2, 3, 1082);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'getListDetails')
+data.setCell(3, 2, 'test.List')
+data.setCell(3, 3, 1035);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'deletedSession')
+data.setCell(4, 2, 'test.Authentication')
+data.setCell(4, 3, 560);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'createSession')
+data.setCell(5, 2, 'test.Authentication')
+data.setCell(5, 3, 446);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'createList')
+data.setCell(6, 2, 'test.List')
+data.setCell(6, 3, 331);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'createSessionWithLogin')
+data.setCell(7, 2, 'test.Authentication')
+data.setCell(7, 3, 318);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'createGuestSession')
+data.setCell(8, 2, 'test.Authentication')
+data.setCell(8, 3, 198);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'createRequestToken')
+data.setCell(9, 2, 'test.Authentication')
+data.setCell(9, 3, 164);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'rateMovie')
+data.setCell(10, 2, 'test.Movies')
+data.setCell(10, 3, 164);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'getMovieDetails')
+data.setCell(11, 2, 'test.Movies')
+data.setCell(11, 3, 99);
+window.suiteTableData['Testing_Google_Apps']= { tableData: data, tableDiv: 'times-div-Testing_Google_Apps'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <div id="times-div-Testing_Google_Apps">
+              </div> <!-- times-div-Testing_Google_Apps -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Testing Google Apps</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Testing_Google_Apps" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.List</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setupSessionId</span>
+                <span class="method-start">721 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">addMovieToAList</span>
+                <span class="method-start">6182 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clearList</span>
+                <span class="method-start">7386 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">createList</span>
+                <span class="method-start">8618 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">deletedList</span>
+                <span class="method-start">8951 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getListDetails</span>
+                <span class="method-start">10040 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.Authentication</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">11078 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">createGuestSession</span>
+                <span class="method-start">11079 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">createRequestToken</span>
+                <span class="method-start">11280 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">createSession</span>
+                <span class="method-start">11446 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">createSessionWithLogin</span>
+                <span class="method-start">11894 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">deletedSession</span>
+                <span class="method-start">12214 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.Movies</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setupSessionId</span>
+                <span class="method-start">12776 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">12776 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">getMovieDetails</span>
+                <span class="method-start">13203 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">rateMovie</span>
+                <span class="method-start">13304 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

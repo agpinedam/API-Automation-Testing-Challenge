@@ -1,0 +1,12 @@
+test\Movies.class
+utils\RequestHelpers.class
+utils\HookSessionId.class
+test\List.class
+models\RequestLogin.class
+test\Authentication.class
+test\TV.class
+utils\ObjectBodyFactory.class
+utils\Credentials.class
+utils\Hooks.class
+models\RequestList.class
+utils\Confirmation.class
