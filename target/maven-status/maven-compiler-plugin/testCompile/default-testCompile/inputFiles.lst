@@ -1,6 +1,11 @@
-C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\Movies.java
-C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\utils\Approve.java
-C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\List.java
-C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\Authentication.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\utils\ObjectBodyFactory.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\test\Authentication.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\test\Movies.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\utils\HookSessionId.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\models\AuthenticationBody.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\models\Response.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\models\RequestList.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\utils\Hooks.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\test\List.java
+C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\utils\Confirmation.java
 C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\utils\Credentials.java
-C:\Users\apineda\Documents\API_Testing_Challenge\src\test\java\GetSessionID.java

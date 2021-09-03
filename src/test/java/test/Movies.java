@@ -1,5 +1,8 @@
+package test;
+
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+import utils.Hooks;
 
 import static io.restassured.RestAssured.given;
 
@@ -16,7 +19,7 @@ public class Movies extends Hooks {
     }
     @Test
     public void rateMovie(){
-        String sessionId = objectBodyFactory.sessionId(user,password,apikey);
+        String sessionId = requestHelpers.sessionId(user,password,apikey);
         String json = objectBodyFactory.jsonRateMovie("10.0");
         Response response = given().contentType("application/json").body(json)
                 .when().post("/movie/"+movieId+"/rating?api_key="+apikey+"&session_id="+sessionId).then().extract().response();
@@ -26,7 +29,7 @@ public class Movies extends Hooks {
     }
     @Test
     public void deleteRateMovie(){
-        String sessionId = objectBodyFactory.sessionId(user,password,apikey);
+        String sessionId = requestHelpers.sessionId(user,password,apikey);
         String url ="https://api.themoviedb.org/3/movie/"+movieId+"/rating?api_key="+apikey+"&session_id="+sessionId;
         //           https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=<<api_key>>&session_id=hhkhkj
         String json ="{\n"+

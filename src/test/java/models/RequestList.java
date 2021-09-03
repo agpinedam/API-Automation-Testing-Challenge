@@ -1,3 +1,5 @@
+package models;
+
 public class RequestList {
 	private String name;
 	private String description;

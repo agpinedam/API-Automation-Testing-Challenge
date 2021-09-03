@@ -1,3 +1,5 @@
+package test;
+
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import utils.Hooks;
@@ -35,8 +37,10 @@ public class Authentication extends Hooks {
     }
     @Test
     public void createSessionWithLogin(){
-        String token= objectBodyFactory.token(apikey);
+        String token= requestHelpers.token(apikey);
+        System.out.println(token);
         String json = objectBodyFactory.jsonLogin(user,password,token);
+        System.out.println(json);
         Response response = given()
                 .contentType("application/json")
                 .body(json)
@@ -45,16 +49,15 @@ public class Authentication extends Hooks {
                 .then()
                 .extract()
                 .response();
+        System.out.println(response.then().log().body());
         confirmation.assertSuccessTrue(response);
         confirmation.assertDateExpires(response);
         confirmation.assertRequestToken(response);
     }
     @Test
     public void createSession(){
-        String token = objectBodyFactory.sessionWithLogin(user,password,apikey);
-        System.out.println(token);
+        String token = requestHelpers.sessionWithLogin(user,password,apikey);
         String json = objectBodyFactory.jsonToken(token);
-        System.out.println(json);
         Response response = given()
                 .contentType("application/json")
                 .body(json)
@@ -70,7 +73,7 @@ public class Authentication extends Hooks {
     }
     @Test
     public void deletedSession(){
-        String sessionId = objectBodyFactory.sessionId(user,password,apikey);
+        String sessionId = requestHelpers.sessionId(user,password,apikey);
         String json = objectBodyFactory.jsonSessionId(sessionId);
         Response response = given()
                 .contentType("application/json")

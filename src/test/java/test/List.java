@@ -1,3 +1,5 @@
+package test;
+
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -11,7 +13,7 @@ public class List extends Hooks {
 
     @Test
     public void createList(){
-        String sessionId= objectBodyFactory.sessionId(user,password,apikey);
+        String sessionId= requestHelpers.sessionId(user,password,apikey);
         System.out.println(sessionId);
         String json= objectBodyFactory.jsonList("ObjectBodyFactory list",
                 new Faker().letterify("random ??????? description ??????? ??????????"));
@@ -32,14 +34,14 @@ public class List extends Hooks {
     }
     @Test
     public void addMovieToAList(){
-        String sessionId= objectBodyFactory.sessionId(user,password,apikey);
-        Response createList = objectBodyFactory.emptyList(user,password,apikey);
+        String sessionId= requestHelpers.sessionId(user,password,apikey);
+        Response createList = requestHelpers.emptyList(user,password,apikey);
         String json = objectBodyFactory.jsonMediaId("129");
         Response response = given()
                 .contentType("application/json")
                 .body(json)
                 .when()
-                .post("/list/"+ objectBodyFactory.listId(createList)+"/add_item?api_key="+apikey+"&session_id="+sessionId)
+                .post("/list/"+ requestHelpers.listId(createList)+"/add_item?api_key="+apikey+"&session_id="+sessionId)
                 .then()
                 .extract()
                 .response();
@@ -49,8 +51,8 @@ public class List extends Hooks {
     }
     @Test
     public void getListDetails(){
-        String sessionId= objectBodyFactory.sessionId(user,password,apikey);
-        int listId = objectBodyFactory.idListWithMovie(user,password,apikey,sessionId);
+        String sessionId= requestHelpers.sessionId(user,password,apikey);
+        int listId = requestHelpers.idListWithMovie(user,password,apikey,sessionId);
         Response response = given()
                 .when()
                 .get("/list/"+listId+"?api_key="+apikey)
@@ -64,8 +66,8 @@ public class List extends Hooks {
     }
     @Test
     public void clearList(){
-        String sessionId= objectBodyFactory.sessionId(user,password,apikey);
-        int listId = objectBodyFactory.idListWithMovie(user,password,apikey,sessionId);
+        String sessionId= requestHelpers.sessionId(user,password,apikey);
+        int listId = requestHelpers.idListWithMovie(user,password,apikey,sessionId);
         Response response = given()
                 .when()
                 .post("/list/"+listId+"/clear?api_key="+apikey+"&session_id="+sessionId+"&confirm="+confirm)
@@ -78,8 +80,8 @@ public class List extends Hooks {
     }
     @Test
     public void deletedList(){
-        String sessionId= objectBodyFactory.sessionId(user,password,apikey);
-        int listId = objectBodyFactory.idListWithMovie(user,password,apikey,sessionId);
+        String sessionId= requestHelpers.sessionId(user,password,apikey);
+        int listId = requestHelpers.idListWithMovie(user,password,apikey,sessionId);
         Response response= given()
                 .when()
                 .delete("/list/"+listId+"?api_key="+apikey+"&session_id="+sessionId)

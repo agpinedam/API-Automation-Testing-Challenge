@@ -7,14 +7,14 @@ You can see the real-life use of this API here: https://www.themoviedb.org/
 Note that you have to create an account, request a key and other steps in order to properly use this API.
 
 The mandatory features to cover with the automated tests are
-• Authentication
+• test.Authentication
 • Lists:
 	o Get Details
-	o Create List
+	o Create test.List
 	o Add Movie
-	o Clear List
-	o Delete List
-• Movies:
+	o Clear test.List
+	o Delete test.List
+• test.Movies:
 	o Get Details
 	o Rate Movie
 Plus, one additional feature to implement a test case. You decide.

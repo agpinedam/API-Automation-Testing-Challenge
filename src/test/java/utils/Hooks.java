@@ -1,3 +1,4 @@
+package utils;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
 
@@ -8,6 +9,7 @@ public class Hooks {
     protected String user;
     protected String password;
     protected Confirmation confirmation = new Confirmation();
+    protected RequestHelpers requestHelpers = new RequestHelpers();
     protected ObjectBodyFactory objectBodyFactory = new ObjectBodyFactory();
 
     @BeforeClass

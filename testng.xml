@@ -3,9 +3,9 @@
 <suite name="Testing Google Apps">
     <test name="Regression" preserve-order="true">
         <classes>
-            <class name="List"/>
-            <class name="Authentication"/>
-            <class name="Movies"/>
+            <class name="test.List"/>
+            <class name="test.Authentication"/>
+            <class name="test.Movies"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

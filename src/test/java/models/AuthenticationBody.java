@@ -1,3 +1,5 @@
+package models;
+
 public class AuthenticationBody {
 	private String password;
 	private String requestToken;
