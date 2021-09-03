@@ -20,7 +20,6 @@ public class Authentication extends Hooks {
         confirmation.assertSuccessTrue(response);
         confirmation.assertGuestSessionId(response);
         confirmation.assertDateExpires(response);
-        System.out.println("ObjectBodyFactory guest");
     }
     @Test
     public void createRequestToken(){
@@ -33,14 +32,11 @@ public class Authentication extends Hooks {
         confirmation.assertSuccessTrue(response);
         confirmation.assertDateExpires(response);
         confirmation.assertRequestToken(response);
-        System.out.println("Request token");
     }
     @Test
     public void createSessionWithLogin(){
         String token= requestHelpers.token(apikey);
-        System.out.println(token);
         String json = objectBodyFactory.jsonLogin(user,password,token);
-        System.out.println(json);
         Response response = given()
                 .contentType("application/json")
                 .body(json)
@@ -49,7 +45,6 @@ public class Authentication extends Hooks {
                 .then()
                 .extract()
                 .response();
-        System.out.println(response.then().log().body());
         confirmation.assertSuccessTrue(response);
         confirmation.assertDateExpires(response);
         confirmation.assertRequestToken(response);
@@ -66,7 +61,6 @@ public class Authentication extends Hooks {
                 .then()
                 .extract()
                 .response();
-        System.out.println(response.then().log().body());
         confirmation.assertSuccessTrue(response);
         confirmation.assertSessionId(response);
     }
@@ -82,6 +76,5 @@ public class Authentication extends Hooks {
                 .extract()
                 .response();
         confirmation.assertSuccessTrue(response);
-        System.out.println("Deleted session");
     }
 }

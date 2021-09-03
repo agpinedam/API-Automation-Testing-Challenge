@@ -11,10 +11,8 @@ public class List extends HookSessionId {
 
     @Test
     public void createList(){
-        System.out.println(sessionId);
         String json= objectBodyFactory.jsonList("ObjectBodyFactory list",
                 new Faker().letterify("random ??????? description ??????? ??????????"));
-        System.out.println(json);
         Response response = given()
                 .contentType("application/json")
                 .body(json)
@@ -23,7 +21,6 @@ public class List extends HookSessionId {
                 .then()
                 .extract()
                 .response();
-        System.out.println(response.then().log().body());
         confirmation.assertSuccessTrue(response);
         confirmation.assertStatusMessage(response,"The item/record was created successfully.");
         confirmation.assertStatusCode(response,1);
@@ -57,7 +54,6 @@ public class List extends HookSessionId {
         confirmation.assertCreatedBy(response,user);
         confirmation.assertItemCount(response);
         confirmation.assertListName(response);
-        System.out.println("get details");
     }
     @Test
     public void clearList(){

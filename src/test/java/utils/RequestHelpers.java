@@ -28,7 +28,6 @@ public class RequestHelpers extends ObjectBodyFactory{
                 .then()
                 .extract()
                 .response();
-        System.out.println(response);
         return token;
     }
     public String sessionId(String user, String password, String apiKey){

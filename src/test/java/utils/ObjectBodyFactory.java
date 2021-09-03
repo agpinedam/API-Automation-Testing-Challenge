@@ -9,7 +9,6 @@ public class ObjectBodyFactory {
 
     public String jsonLogin(String user,String password,String token){
         RequestLogin requestLogin = new RequestLogin(user,password,token);
-        System.out.println();
         return new Gson().toJson(requestLogin);
     }
     public String jsonToken(String token){

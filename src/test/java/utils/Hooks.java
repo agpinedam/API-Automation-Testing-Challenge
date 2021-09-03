@@ -19,6 +19,5 @@ public class Hooks {
         user =credentials.getUserName();
         password =credentials.getPassword();
         RestAssured.baseURI="https://api.themoviedb.org/3";
-        System.out.println("Setup de la suit");
     }
 }

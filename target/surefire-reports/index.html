@@ -196,7 +196,7 @@
                   <span class="method-name">deletedList</span>
                   <div class="stack-trace">java.lang.AssertionError: Request List should be successful expected [true] but found [false]
 	at utils.Confirmation.assertSuccessTrue(Confirmation.java:10)
-	at test.List.deletedList(List.java:84)
+	at test.List.deletedList(List.java:80)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 ... Removed 34 stack frames
 </div> <!-- stack-trace -->
@@ -375,53 +375,53 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'clearList')
+data.setCell(0, 1, 'addMovieToAList')
 data.setCell(0, 2, 'test.List')
-data.setCell(0, 3, 1228);
+data.setCell(0, 3, 1188);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'addMovieToAList')
+data.setCell(1, 1, 'clearList')
 data.setCell(1, 2, 'test.List')
-data.setCell(1, 3, 1138);
+data.setCell(1, 3, 1107);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'deletedList')
+data.setCell(2, 1, 'getListDetails')
 data.setCell(2, 2, 'test.List')
-data.setCell(2, 3, 1082);
+data.setCell(2, 3, 1043);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'getListDetails')
+data.setCell(3, 1, 'deletedList')
 data.setCell(3, 2, 'test.List')
-data.setCell(3, 3, 1035);
+data.setCell(3, 3, 1037);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'deletedSession')
 data.setCell(4, 2, 'test.Authentication')
-data.setCell(4, 3, 560);
+data.setCell(4, 3, 545);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'createSession')
 data.setCell(5, 2, 'test.Authentication')
-data.setCell(5, 3, 446);
+data.setCell(5, 3, 490);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'createList')
-data.setCell(6, 2, 'test.List')
-data.setCell(6, 3, 331);
+data.setCell(6, 1, 'createSessionWithLogin')
+data.setCell(6, 2, 'test.Authentication')
+data.setCell(6, 3, 311);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'createSessionWithLogin')
-data.setCell(7, 2, 'test.Authentication')
-data.setCell(7, 3, 318);
+data.setCell(7, 1, 'createList')
+data.setCell(7, 2, 'test.List')
+data.setCell(7, 3, 258);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'createGuestSession')
-data.setCell(8, 2, 'test.Authentication')
-data.setCell(8, 3, 198);
+data.setCell(8, 1, 'rateMovie')
+data.setCell(8, 2, 'test.Movies')
+data.setCell(8, 3, 192);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'createRequestToken')
+data.setCell(9, 1, 'createGuestSession')
 data.setCell(9, 2, 'test.Authentication')
-data.setCell(9, 3, 164);
+data.setCell(9, 3, 160);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'rateMovie')
-data.setCell(10, 2, 'test.Movies')
-data.setCell(10, 3, 164);
+data.setCell(10, 1, 'createRequestToken')
+data.setCell(10, 2, 'test.Authentication')
+data.setCell(10, 3, 158);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'getMovieDetails')
 data.setCell(11, 2, 'test.Movies')
-data.setCell(11, 3, 99);
+data.setCell(11, 3, 83);
 window.suiteTableData['Testing_Google_Apps']= { tableData: data, tableDiv: 'times-div-Testing_Google_Apps'}
 return data;
 }
@@ -459,77 +459,77 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setupSessionId</span>
-                <span class="method-start">721 ms</span>
+                <span class="method-start">377 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">addMovieToAList</span>
-                <span class="method-start">6182 ms</span>
+                <span class="method-start">3364 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clearList</span>
-                <span class="method-start">7386 ms</span>
+                <span class="method-start">4621 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createList</span>
-                <span class="method-start">8618 ms</span>
+                <span class="method-start">5732 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">deletedList</span>
-                <span class="method-start">8951 ms</span>
+                <span class="method-start">5994 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getListDetails</span>
-                <span class="method-start">10040 ms</span>
+                <span class="method-start">7042 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.Authentication</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">11078 ms</span>
+                <span class="method-start">8088 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">createGuestSession</span>
-                <span class="method-start">11079 ms</span>
+                <span class="method-start">8089 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createRequestToken</span>
-                <span class="method-start">11280 ms</span>
+                <span class="method-start">8250 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createSession</span>
-                <span class="method-start">11446 ms</span>
+                <span class="method-start">8410 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createSessionWithLogin</span>
-                <span class="method-start">11894 ms</span>
+                <span class="method-start">8902 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deletedSession</span>
-                <span class="method-start">12214 ms</span>
+                <span class="method-start">9215 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.Movies</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setupSessionId</span>
-                <span class="method-start">12776 ms</span>
+                <span class="method-name">setup</span>
+                <span class="method-start">9762 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">12776 ms</span>
+                <span class="method-name">setupSessionId</span>
+                <span class="method-start">9763 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">getMovieDetails</span>
-                <span class="method-start">13203 ms</span>
+                <span class="method-start">10202 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">rateMovie</span>
-                <span class="method-start">13304 ms</span>
+                <span class="method-start">10288 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
