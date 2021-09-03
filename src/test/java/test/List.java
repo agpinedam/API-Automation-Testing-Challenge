@@ -3,17 +3,14 @@ package test;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import utils.Hooks;
+import utils.HookSessionId;
 
 import static io.restassured.RestAssured.given;
 
-public class List extends Hooks {
-
-    boolean confirm=true;
+public class List extends HookSessionId {
 
     @Test
     public void createList(){
-        String sessionId= requestHelpers.sessionId(user,password,apikey);
         System.out.println(sessionId);
         String json= objectBodyFactory.jsonList("ObjectBodyFactory list",
                 new Faker().letterify("random ??????? description ??????? ??????????"));
@@ -34,7 +31,6 @@ public class List extends Hooks {
     }
     @Test
     public void addMovieToAList(){
-        String sessionId= requestHelpers.sessionId(user,password,apikey);
         Response createList = requestHelpers.emptyList(user,password,apikey);
         String json = objectBodyFactory.jsonMediaId("129");
         Response response = given()
@@ -51,7 +47,6 @@ public class List extends Hooks {
     }
     @Test
     public void getListDetails(){
-        String sessionId= requestHelpers.sessionId(user,password,apikey);
         int listId = requestHelpers.idListWithMovie(user,password,apikey,sessionId);
         Response response = given()
                 .when()
@@ -66,7 +61,6 @@ public class List extends Hooks {
     }
     @Test
     public void clearList(){
-        String sessionId= requestHelpers.sessionId(user,password,apikey);
         int listId = requestHelpers.idListWithMovie(user,password,apikey,sessionId);
         Response response = given()
                 .when()
@@ -80,7 +74,6 @@ public class List extends Hooks {
     }
     @Test
     public void deletedList(){
-        String sessionId= requestHelpers.sessionId(user,password,apikey);
         int listId = requestHelpers.idListWithMovie(user,password,apikey,sessionId);
         Response response= given()
                 .when()

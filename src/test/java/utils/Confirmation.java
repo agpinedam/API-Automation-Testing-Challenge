@@ -7,7 +7,7 @@ public class Confirmation {
 
     public void assertSuccessTrue(Response response){
         boolean success = response.jsonPath().getBoolean("success");
-        Assert.assertTrue(success,"RequestList should be successful");
+        Assert.assertTrue(success,"Request List should be successful");
     }
     public void assertGuestSessionId(Response response){
         String guestSessionId = response.jsonPath().getString("guest_session_id");
@@ -59,7 +59,15 @@ public class Confirmation {
         String movieName = response.jsonPath().getString("title");
         Assert.assertNotNull(movieName);
     }
-    public void AssertMovieOverview(Response response){
+    public void assertMovieOverview(Response response){
+        String movieOverview = response.jsonPath().getString("overview");
+        Assert.assertNotNull(movieOverview);
+    }
+    public void assertTvName(Response response){
+        String movieOverview = response.jsonPath().getString("name");
+        Assert.assertNotNull(movieOverview);
+    }
+    public void assertTvOverview(Response response){
         String movieOverview = response.jsonPath().getString("overview");
         Assert.assertNotNull(movieOverview);
     }

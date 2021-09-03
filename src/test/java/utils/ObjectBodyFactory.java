@@ -2,16 +2,15 @@ package utils;
 
 import com.google.gson.Gson;
 import models.RequestList;
+import models.RequestLogin;
 
 public class ObjectBodyFactory {
 
 
     public String jsonLogin(String user,String password,String token){
-        String json="{\n"+
-                "  \"username\": \""+user+"\",\n"+
-                "  \"password\": \""+password+"\",\n"+
-                "  \"request_token\": \""+token+"\"\n}";
-        return json;
+        RequestLogin requestLogin = new RequestLogin(user,password,token);
+        System.out.println();
+        return new Gson().toJson(requestLogin);
     }
     public String jsonToken(String token){
         String json ="{\n"+
